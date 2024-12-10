@@ -15,7 +15,7 @@ class PIMonitor():
     def __init__(self, CONFIG):
 
         # topic for publishing the temperature of the host, only works on rasberry pi
-        self.pi_temperature_pub = rospy.Publisher('/cgras/camera_monitor_node/temperature', Float32, queue_size=1)
+        self.pi_temperature_pub = rospy.Publisher(CONFIG.get(SystemConfigNames.ROS_PI_TEMP_TOPIC), Float32, queue_size=1)
         # start a timer
         self.timer = rospy.Timer(rospy.Duration(CONFIG.get(SystemConfigNames.SYSTEM_TIMER)), self.cb_timer)
 
