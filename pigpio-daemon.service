@@ -1,0 +1,12 @@
+[Unit]
+Description=PIGPIO daemon for interfacing rasberry pi
+
+[Service]
+User=root
+Group=root
+Type=forking
+PIDFile=pigpiod.pid 
+ExecStart=/usr/local/bin/pigpiod
+
+[Install]
+WantedBy=multi-user.target

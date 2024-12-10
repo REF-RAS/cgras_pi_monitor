@@ -1,0 +1,13 @@
+<launch>
+    <arg name="use_camera" default="true"/>
+    <arg name="agent_output" default="screen" /> 
+    <arg name="cgras_home" default="/home/qcr/cgras_data" />    
+
+    <include file="$(find cgras_camera_agent)/launch/main.launch">
+        <arg name="namespace" default="cgras" doc="The namespace for the project" />
+        <arg name="agent_only" default="true" />
+        <arg name="use_camera" value="$(arg use_camera)"/>
+        <arg name="agent_output" default="$(arg agent_output)" /> 
+        <arg name="cgras_home" default="$(arg cgras_home)" />
+    </include>
+</launch>   

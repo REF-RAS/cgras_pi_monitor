@@ -1,0 +1,10 @@
+# YAML file for the system
+---
+cgras_pi_monitor:
+  # timers for driving the system 
+  system_timer: 1   # seconds
+  # default ros topics
+  ros_pi_temp_topic: '/cgras/pi/temperature'
+
+
+
