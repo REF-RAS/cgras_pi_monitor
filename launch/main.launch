@@ -1,23 +1,13 @@
 <launch>
     <arg name="namespace" default="cgras" doc="The namespace for the project" />
-    <arg name="agent_only" default="false" />
-    <arg name="use_camera" default="true" />
-    <arg name="agent_output" default="screen" /> 
-    <arg name="cgras_home" default="/home/qcr/cgras_data" />
+    <arg name="pi_monitor" default="true" />
 
     <group ns="$(arg namespace)">
-        <param name="use_camera" type="boolean" value="$(arg use_camera)" /> 
-        <param name="agent_output" type="string" value="$(arg agent_output)" /> 
-        <param name="cgras_home" type="string" value="$(arg cgras_home)" />
+        <param name="pi_monitor" type="boolean" value="$(arg pi_monitor)" /> 
 
-        <!-- Launch the camera monitor node first, which will launch the camera agent -->
-        <group unless="$(arg agent_only)">        
-            <node pkg="cgras_camera_agent" type="camera_node_monitor.py" name="camera_node_monitor" output="log" respawn="true">
-            </node>
-        </group>
-       <!-- Launch the (agent only -->
-        <group if="$(arg agent_only)">
-            <node pkg="cgras_camera_agent" type="camera_node.py" name="camera_node_monitor" output="$(arg agent_output)" respawn="true">
+        <!-- Launch the pi monitor -->
+        <group unless="$(arg pi_monitor)">        
+            <node pkg="cgras_pi_monitor" type="run_pi_monitor.py" name="pi_monitor" output="log" respawn="true">
             </node>
         </group>
     </group>
