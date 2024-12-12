@@ -6,7 +6,7 @@
         <param name="pi_monitor" type="boolean" value="$(arg pi_monitor)" /> 
 
         <!-- Launch the pi monitor -->
-        <group unless="$(arg pi_monitor)">        
+        <group if="$(arg pi_monitor)">        
             <node pkg="cgras_pi_monitor" type="run_pi_monitor.py" name="pi_monitor" output="log" respawn="true">
             </node>
         </group>

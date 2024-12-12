@@ -1,7 +1,7 @@
 <launch>
     <arg name="pi_monitor" default="true"/> 
 
-    <include file="$(find cgras_camera_agent)/launch/main.launch">
+    <include file="$(find cgras_pi_monitor)/launch/main.launch">
         <arg name="namespace" default="cgras" doc="The namespace for the project" />
         <arg name="pi_monitor" value="$(arg pi_monitor)"/>
     </include>
