@@ -8,7 +8,7 @@ req_packages = [
 
 # fetch values from package.xml
 setup_args = generate_distutils_setup(
-    packages=['pi_monitor'],
+    packages=['pi_monitor', 'cgras_pi_monitor'],
     package_dir={'': 'src'},
     python_requires='>=3.9',
     install_requires=req_packages

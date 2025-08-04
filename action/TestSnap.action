@@ -1,0 +1,16 @@
+### GOAL DEFINITION: controlling the camera
+string command
+int32 tank_id
+int32 tile_x
+int32 tile_y
+int32 grid_x
+int32 grid_y
+---
+### RESULT DEFINITION
+sensor_msgs/Image image
+sensor_msgs/CompressedImage cimage
+string metadata
+string error
+---
+### FEEDBACK
+string status
